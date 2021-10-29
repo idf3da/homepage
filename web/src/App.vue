@@ -20,6 +20,10 @@ export default {
 	font-family: "Graphie";
 	src: local("Graphie"), url("./fonts/Graphie W01 SemiBold.ttf");
 }
+@font-face {
+	font-family: "Space Mono";
+	src: local("Space Mono"), url("./fonts/SpaceMono-Regular.ttf");
+}
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;

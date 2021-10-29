@@ -1,56 +1,64 @@
 <template>
-	<v-app>
+	<v-app id="all">
 		<v-app-bar app id="bar" flat> </v-app-bar>
 
 		<v-main id="main">
-			<transition
-				appear
-				@before-enter="beforeEnter"
-				@enter="enter"
-				:css="false"
-			>
+			<transition appear name="slide-fade">
 				<h3 id="prime">Bulanov Motors and Co.</h3>
 			</transition>
+			<v-container class="mt-16 pt-16">
+				<v-row no-gutters>
+					<v-col
+						v-for="member in members"
+						:key="member"
+					>
+						<Profile
+							:chel="member"
+							class="pr-8"
+						></Profile>
+					</v-col>
+				</v-row>
+			</v-container>
 		</v-main>
 	</v-app>
 </template>
 
 <script>
+import Profile from "./Profile.vue";
+
 export default {
 	name: "Main",
-	methods: {
-		beforeEnter(el) {
-			el.style.opacity = 0;
-
-			if (this.translate)
-				el.style.transform =
-					"translate(" +
-					this.translate.join(",") +
-					")";
-		},
-		enter(el) {
-			let transitions =
-				"opacity " +
-				this.duration +
-				"ms ease-in-out " +
-				this.delay +
-				"ms";
-			if (this.translate)
-				transitions +=
-					", transform " +
-					this.duration +
-					"ms ease-in-out " +
-					this.delay +
-					"ms";
-			el.style.transition = transitions;
-			getComputedStyle(el);
-			setTimeout(() => {
-				el.style.opacity = 1;
-				if (this.translate)
-					el.style.transform = "initial";
-			});
-		},
+	components: {
+		Profile,
 	},
+	data() {
+		return {
+			members: [
+				{
+					name: "Dmitry Mac Gregory",
+					pic: "gregory.jpg",
+				},
+				{
+					name: "Dmitry Kosenberg",
+					pic: "dima.jpg",
+				},
+				{
+					name: "Ilia Desyaichenko",
+					pic: "ilia2.jpg",
+				},
+				{
+					name: "Ilya Shabanenko",
+					pic: "ilya.jpg",
+				},
+				{
+					name: "Alexandr Bylanoid",
+					pic: "sasha.jpg",
+				},
+			],
+		};
+	},
+	props: {},
+	methods: {},
 };
 </script>
 
@@ -66,8 +74,18 @@ export default {
 }
 #prime {
 	font-family: "Graphie";
-	font-size: 100px;
+	font-size: 120px;
 	color: white;
-	transition: opacity 0.5s ease-in-out;
+}
+.slide-fade-enter-active {
+	transition: all 2s ease;
+}
+.slide-fade-leave-active {
+	transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter,
+.slide-fade-leave-to {
+	transform: translateY(30px);
+	opacity: 0;
 }
 </style>
