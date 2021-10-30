@@ -22,7 +22,12 @@
 								id="prime-co"
 								class="text-end"
 							>
-								and Co.
+								and Co<span
+									class="
+										redish
+									"
+									>.</span
+								>
 							</h3>
 						</transition>
 					</v-row>
@@ -42,7 +47,7 @@
 										true
 									"
 									:typeSpeed="
-										115
+										75
 									"
 									:startDelay="
 										delays.typing
@@ -130,31 +135,36 @@ export default {
 					name: "Dmitry Mac Gregory",
 					pic: "gregory.jpg",
 					bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-					pos: "Chief brand officer (CBO)",
-				},
-				{
-					name: "Dmitry Kosenberg",
-					pic: "dima.jpg",
-					bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-					pos: "Chief administrative officer (CAO)",
-				},
-				{
-					name: "Ilia Desyaichenko",
-					pic: "ilia2.jpg",
-					bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-					pos: "Chief technology officer (CTO)",
-				},
-				{
-					name: "Ilya Shabanenko",
-					pic: "ilya.jpg",
-					bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-					pos: "Chief data officer (CDO)",
+					pos: "Chief brand officer",
+					posC: "CBO",
 				},
 				{
 					name: "Alexandr Bylanoid",
 					pic: "sasha2.jpg",
 					bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-					pos: "Chief executive officer (CEO)",
+					pos: "Chief executive officer",
+					posC: "CEO",
+				},
+				{
+					name: "Dmitry Kosenberg",
+					pic: "dima_mono.jpg",
+					bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+					pos: "Chief administrative officer",
+					posC: "CAO",
+				},
+				{
+					name: "Ilia Desyaichenko",
+					pic: "ilia_mono.jpg",
+					bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+					pos: "Chief technology officer",
+					posC: "CTO",
+				},
+				{
+					name: "Ilya Shabanenko",
+					pic: "ilya2.jpg",
+					bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+					pos: "Chief data officer",
+					posC: "CDO",
 				},
 			],
 			we_are: [
@@ -224,6 +234,10 @@ export default {
 	font-family: "MavenPro Medium";
 	font-size: 65px;
 	color: #ea0f1e;
+}
+.redish {
+	color: #ea0f1e;
+	background: black;
 }
 .Profile {
 	color: blue;

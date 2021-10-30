@@ -26,6 +26,9 @@
 				>
 					<p id="pos" class="font-italic">
 						—{{ chel.pos }}
+						<span class="redish"
+							>({{ chel.posC }})</span
+						>
 					</p></v-row
 				>
 			</v-col>
@@ -52,5 +55,9 @@ export default {
 	font-size: 14px;
 }
 #pos {
+}
+.redish {
+	color: #ea0f1e;
+	background: black;
 }
 </style>
