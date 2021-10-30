@@ -2,14 +2,38 @@
 	<v-app id="all">
 		<v-app-bar app id="bar" flat> </v-app-bar>
 
-		<v-main id="main" class="mt-n11">
-			<transition appear name="slide-fade">
-				<h3 id="prime" class="mt-n16">
-					Bulanov Motors and Co.
-				</h3>
-			</transition>
+		<v-main id="main" class="">
+			<v-responsive
+				min-height="900px"
+				class=""
+				justify="center"
+			>
+				<v-col cols="10" class="ml-16">
+					<v-row justify="end">
+						<transition appear name="prime">
+							<h3
+								id="prime"
+								class="mb-n16"
+							>
+								Bulanov Motors
+							</h3>
+						</transition>
+						<transition
+							appear
+							name="prime-co"
+						>
+							<h3
+								id="prime-co"
+								class="text-end"
+							>
+								and Co.
+							</h3>
+						</transition>
+					</v-row>
+				</v-col>
+			</v-responsive>
 
-			<v-container class="mt-10 pt-0 mr-6">
+			<v-container class="mt-10 pt-0 mr-5">
 				<v-row no-gutters justify="center">
 					<v-col
 						v-for="(
@@ -18,10 +42,13 @@
 						:key="member"
 						md="4"
 					>
-						<transition appear name="fade">
+						<transition
+							appear
+							name="profile-cards"
+						>
 							<Profile
 								:style="`--delay: ${
-									2500 +
+									delays.prime +
 									275 *
 										index
 								}ms`"
@@ -50,6 +77,9 @@ export default {
 	},
 	data() {
 		return {
+			delays: {
+				prime: 2500,
+			},
 			members: [
 				{
 					name: "Dmitry Mac Gregory",
@@ -101,29 +131,59 @@ export default {
 }
 #prime {
 	font-family: "Graphie";
-	font-size: 120px;
+	font-size: 200px;
+	color: white;
+}
+#prime-co {
+	font-family: "Graphie";
+	font-size: 100px;
+	color: white;
+}
+#sub {
+	font-family: "Graphie";
+	font-size: 75px;
 	color: white;
 }
 .Profile {
 	color: blue;
 }
-.slide-fade-enter-active {
+
+.prime-enter-active {
 	transition: all 1.8s ease;
 	transition-delay: 1s;
 }
-
-.slide-fade-enter,
-.slide-fade-leave-to {
+.prime-enter,
+.prime-leave-to {
 	transform: translateY(40px);
 	opacity: 0;
 }
-.fade-enter-active {
+
+.prime-co-enter-active {
+	transition: all 1.8s ease;
+	transition-delay: 2s;
+}
+.prime-co-enter,
+.prime-co-leave-to {
+	opacity: 0;
+}
+
+.sub-enter-active {
+	transition: all 0.75s ease;
+	transition-delay: 2.5s;
+}
+.sub-enter,
+.sub-leave-to {
+	/* transform: translateX(-15px); */
+	opacity: 0;
+}
+
+.profile-cards-enter-active {
 	transition: all 1.2s ease;
 	transition-delay: var(--delay);
 }
 
-.fade-enter,
-.fade-leave-to {
+.profile-cards-enter,
+.profile-cards-leave-to {
 	transform: translateX(-13px);
 	opacity: 0;
 }
