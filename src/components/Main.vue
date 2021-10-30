@@ -3,13 +3,9 @@
 		<v-app-bar app id="bar" flat> </v-app-bar>
 
 		<v-main id="main" class="">
-			<v-responsive
-				min-height="900px"
-				class=""
-				justify="center"
-			>
-				<v-col cols="10" class="ml-16">
-					<v-row justify="end">
+			<v-responsive min-height="900px" justify="center">
+				<v-col cols="11" class="ml-n16">
+					<v-row justify="end" class="mb-16">
 						<transition appear name="prime">
 							<h3
 								id="prime"
@@ -29,6 +25,54 @@
 								and Co.
 							</h3>
 						</transition>
+					</v-row>
+
+					<v-row class="pt-16">
+						<v-col cols="2"></v-col>
+						<v-col class="ml-n8">
+							<transition
+								appear
+								name="sub"
+							>
+								<vue-typed-js
+									:strings="
+										we_are
+									"
+									:loop="
+										true
+									"
+									:typeSpeed="
+										100
+									"
+									:startDelay="
+										delays.typing
+									"
+									:backSpeed="
+										75
+									"
+									:smartBackspace="
+										true
+									"
+									:backDelay="
+										1000
+									"
+								>
+									<h1
+										id="sub"
+									>
+										>
+										We
+										are
+										<span
+											id="sub-a"
+											class="
+												typing
+											"
+										></span>
+									</h1>
+								</vue-typed-js>
+							</transition>
+						</v-col>
 					</v-row>
 				</v-col>
 			</v-responsive>
@@ -79,6 +123,7 @@ export default {
 		return {
 			delays: {
 				prime: 2500,
+				typing: 3750,
 			},
 			members: [
 				{
@@ -112,6 +157,36 @@ export default {
 					pos: "Chief executive officer (CEO)",
 				},
 			],
+			we_are: [
+				"Team",
+				"Partners",
+				"Community",
+				"Friends",
+				"Team",
+				"Partners",
+				"Community",
+				"Friends",
+				"Team",
+				"Partners",
+				"Community",
+				"Friends",
+				"Team",
+				"Partners",
+				"Community",
+				"Friends",
+				"Team",
+				"Partners",
+				"Community",
+				"Friends",
+				"Team",
+				"Partners",
+				"Community",
+				"Friends",
+				"Team",
+				"Partners",
+				"Community",
+				"Friends",
+			],
 		};
 	},
 	props: {},
@@ -140,9 +215,14 @@ export default {
 	color: white;
 }
 #sub {
-	font-family: "Graphie";
-	font-size: 75px;
+	font-family: "MavenPro Regular";
+	font-size: 65px;
 	color: white;
+}
+#sub-a {
+	font-family: "MavenPro Medium";
+	font-size: 65px;
+	color: #ea0f1e;
 }
 .Profile {
 	color: blue;
@@ -168,7 +248,7 @@ export default {
 }
 
 .sub-enter-active {
-	transition: all 0.75s ease;
+	transition: all 1s ease;
 	transition-delay: 2.5s;
 }
 .sub-enter,

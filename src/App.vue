@@ -28,6 +28,14 @@ export default {
 	font-family: Graphik;
 	src: local("Graphik-Semibold"), url("./fonts/Graphik-Regular.ttf");
 }
+@font-face {
+	font-family: MavenPro Regular;
+	src: local("MavenPro Regular"), url("./fonts/MavenPro-Regular.ttf");
+}
+@font-face {
+	font-family: MavenPro Medium;
+	src: local("MavenPro Medium"), url("./fonts/MavenPro-Medium.ttf");
+}
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
