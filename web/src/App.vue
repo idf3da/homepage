@@ -24,6 +24,10 @@ export default {
 	font-family: "Space Mono";
 	src: local("Space Mono"), url("./fonts/SpaceMono-Regular.ttf");
 }
+@font-face {
+	font-family: Graphik;
+	src: local("Graphik-Semibold"), url("./fonts/Graphik-Regular.ttf");
+}
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
