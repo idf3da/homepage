@@ -42,7 +42,7 @@
 										true
 									"
 									:typeSpeed="
-										100
+										115
 									"
 									:startDelay="
 										delays.typing
@@ -152,7 +152,7 @@ export default {
 				},
 				{
 					name: "Alexandr Bylanoid",
-					pic: "sasha.jpg",
+					pic: "sasha2.jpg",
 					bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
 					pos: "Chief executive officer (CEO)",
 				},
@@ -160,8 +160,8 @@ export default {
 			we_are: [
 				"Team",
 				"Partners",
+				"Сщььгтшен ой",
 				"Community",
-				"Сщььгтшен ой...",
 				"Friends",
 				"Team",
 				"Partners",

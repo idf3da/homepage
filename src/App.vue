@@ -36,6 +36,10 @@ export default {
 	font-family: MavenPro Medium;
 	src: local("MavenPro Medium"), url("./fonts/MavenPro-Medium.ttf");
 }
+@font-face {
+	font-family: Consolas;
+	src: local("Consolas"), url("./fonts/Consolas.ttf");
+}
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
