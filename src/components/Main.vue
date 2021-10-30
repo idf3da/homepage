@@ -160,6 +160,7 @@ export default {
 			we_are: [
 				"Team",
 				"Partners",
+				"Сщььгтшен ой"
 				"Community",
 				"Friends",
 				"Team",
