@@ -218,18 +218,47 @@ export default {
 	font-family: "Graphie";
 	line-height: 0.9;
 	color: white;
-	font-size: 12vw;
 }
 #sub {
 	font-family: "Helvetica-Light Light";
-	font-size: 0.23em;
-	margin-top: 30vh;
+	font-size: 6vh;
+	margin-top: 35vh;
 	color: white;
 }
 #sub-a {
 	font-family: "Helvetica";
 	font-size: 1em;
 	color: #ea0f1e;
+}
+@media (min-width: 400px) {
+	#prime {
+		font-size: 50px;
+	}
+}
+@media (min-width: 650px) {
+	#prime {
+		font-size: 85px;
+	}
+}
+@media (min-width: 900px) {
+	#prime {
+		font-size: 105px;
+	}
+}
+@media (min-width: 1150px) {
+	#prime {
+		font-size: 140px;
+	}
+}
+@media (min-width: 1400px) {
+	#prime {
+		font-size: 175px;
+	}
+}
+@media (min-width: 1650px) {
+	#prime {
+		font-size: 210px;
+	}
 }
 
 #prime-co {
@@ -285,17 +314,6 @@ export default {
 .profile-cards-leave-to {
 	transform: translateX(-13px);
 	opacity: 0;
-}
-
-@media screen and (max-width: 1200px) {
-	#sub {
-		font-size: 0.4em;
-	}
-}
-@media screen and (max-width: 600px) {
-	#sub {
-		font-size: 0.55em;
-	}
 }
 </style>
 

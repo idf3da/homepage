@@ -40,6 +40,18 @@ export default {
 	font-family: Consolas;
 	src: local("Consolas"), url("./fonts/Consolas.ttf");
 }
+@font-face {
+	font-family: Helvetica;
+	src: local("Helvetica"), url("./fonts/Helvetica.ttf");
+}
+@font-face {
+	font-family: Helvetica Bold;
+	src: local("Helvetica Bold"), url("./fonts/Helvetica-Bold.ttf");
+}
+@font-face {
+	font-family: Helvetica-Light Light;
+	src: local("Helvetica-Light"), url("./fonts/HelveticaLt.ttf");
+}
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
