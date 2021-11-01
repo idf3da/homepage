@@ -4,7 +4,27 @@
 			app
 			id="bar"
 			flat
-		></v-app-bar>
+		>
+			<transition
+				appear
+				name="bar"
+			>
+				<v-row class="d-flex justify-end text-center">
+					<v-card
+						flat
+						class="transparent ma-3 mr-4"
+						id="bar-text"
+					>Contact</v-card>
+					<v-card
+						flat
+						class="transparent ma-3 mr-4"
+						id="bar-text"
+					>RU | <span class="grey--text">EN</span></v-card>
+
+					<v-card></v-card>
+				</v-row>
+			</transition>
+		</v-app-bar>
 
 		<v-main
 			id="main"
@@ -14,7 +34,10 @@
 				min-height="100vh"
 				id="prime"
 			>
-				<v-row justify="center">
+				<v-row
+					justify="center"
+					class="mt-0"
+				>
 					<div>
 
 						<transition
@@ -205,10 +228,9 @@ export default {
 	/* outline: 1px dotted cyan; */
 }
 
-#all {
-}
 #bar {
 	background: black;
+	color: white;
 }
 #main {
 	background: black;
@@ -238,10 +260,17 @@ export default {
 	color: white;
 	font-size: 0.5em;
 }
-
+#bar-text {
+	color: white;
+	font-size: 1.6vh;
+}
 .redish {
 	color: #ea0f1e;
 	background: black;
+}
+.transparent {
+	background-color: transparent !important;
+	border-color: transparent !important;
 }
 .Profile {
 	color: blue;
@@ -275,6 +304,15 @@ export default {
 	/* transform: translateX(-15px); */
 	opacity: 0;
 }
+.bar-enter-active {
+	transition: all 0.65s ease;
+	transition-delay: 2.5s;
+}
+.bar-enter,
+.bar-leave-to {
+	transform: translateY(-30px);
+	opacity: 0;
+}
 
 .profile-cards-enter-active {
 	transition: all 1.2s ease;
@@ -290,11 +328,13 @@ export default {
 @media screen and (max-width: 1200px) {
 	#sub {
 		font-size: 0.4em;
+		margin-top: 40vh;
 	}
 }
 @media screen and (max-width: 600px) {
 	#sub {
 		font-size: 0.55em;
+		margin-top: 65vh;
 	}
 }
 </style>
