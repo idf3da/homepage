@@ -1,10 +1,13 @@
 <template>
 	<div id="card">
 		<v-row no-gutters>
-			<div class="name">{{ chel.name }}</div>
+			<div
+				class="name glitch"
+				:data-text="chel.name"
+			>{{ chel.name }}</div>
 		</v-row>
 		<v-row no-gutters>
-			<v-col>
+			<v-col cols="4">
 				<v-img
 					id="
 			img"
@@ -14,8 +17,34 @@
 				>
 				</v-img>
 			</v-col>
-			<v-col>{{ chel.bio }}</v-col>
+			<v-col
+				no-gutters
+				class="text-left ml-2"
+			>
+				<v-row
+					no-gutters
+					class="text-justify"
+				>
+					{{ chel.bio }}
+				</v-row>
+				<v-row
+					no-gutters
+					align="end"
+					justify="end"
+				>
+
+				</v-row>
+
+			</v-col>
+
 		</v-row>
+		<p
+			id="pos"
+			class="font-italic text-right"
+		>
+			—{{ chel.pos }}
+			<span class="redish">({{ chel.posC }})</span>
+		</p>
 	</div>
 </template>
 
@@ -27,7 +56,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 * {
 	/* outline: 1px solid cyan; */
 }
@@ -38,36 +67,9 @@ export default {
 	color: white;
 	font-family: "Space Mono";
 	font-size: 20px;
-	/* text-transform: uppercase; */
-	letter-spacing: 0.1em;
-
+	letter-spacing: 0.05em;
 	display: inline-block; /* Dangerous */
 	padding: 0.4em 0px;
-	position: relative;
-	outline: none;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-}
-
-.name:before {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 1px;
-	bottom: 0;
-	left: 0;
-	background-color: white;
-	transform: scaleX(0);
-	transition: transform 0.25s ease;
-}
-.name:hover:before,
-.name:focus:before {
-	visibility: visible;
-	transform: scaleX(1);
-}
-.name:hover:after {
-	width: 100%;
-	left: 0;
 }
 
 #bio {
@@ -83,5 +85,61 @@ export default {
 }
 #v-img {
 	margin: 100, 100, 100, 100;
+}
+
+.glitch {
+	position: relative;
+	white-space: nowrap;
+}
+@keyframes noise-anim {
+	$steps: 25;
+	@for $i from 0 through $steps {
+		#{percentage($i*(1/$steps))} {
+			clip: rect(
+				random(100) + px,
+				9999px,
+				random(100) + px,
+				0
+			);
+		}
+	}
+}
+.glitch:hover:after {
+	content: attr(data-text);
+	position: absolute;
+	left: 1px;
+	text-shadow: -1px 0 red;
+	top: 0;
+	padding-top: 10px;
+	color: white;
+	overflow: visible;
+	clip: rect(0, 900px, 0, 0);
+	animation: noise-anim 0.85s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2 {
+	$steps: 25;
+	@for $i from 0 through $steps {
+		#{percentage($i*(1/$steps))} {
+			clip: rect(
+				random(100) + px,
+				9999px,
+				random(100) + px,
+				0
+			);
+		}
+	}
+}
+.glitch:hover:before {
+	content: attr(data-text);
+	position: absolute;
+	left: -2px;
+	text-shadow: 1px 0 blue;
+	top: 0;
+	color: white;
+	background: black;
+	overflow: visible;
+	clip: rect(0, 900px, 0, 0);
+	animation: noise-anim-2 3s infinite linear alternate-reverse;
 }
 </style>
