@@ -102,7 +102,7 @@
 
 			</v-responsive>
 
-			<v-container>
+			<v-responsive class="ml-4 mr-4">
 				<v-row
 					no-gutters
 					justify="center"
@@ -112,11 +112,17 @@
 							member, index
 						) in members"
 						:key="member"
+						xs="7"
+						sm="6"
 						md="4"
+						lg="4"
+						xl="4"
+						cols="10"
 					>
 						<transition
 							appear
-							name="profile-cards"
+							name="
+							profile-cards"
 						>
 							<Profile
 								:style="`--delay: ${
@@ -124,23 +130,43 @@
 									275 *
 										index
 								}ms`"
+								class="ml-2 mr-2 mt-2"
 								:chel="member"
 							></Profile>
 						</transition>
 					</v-col>
 				</v-row>
-			</v-container>
+			</v-responsive>
+
+			<!-- <div v-animate-onscroll.repeat="'animated flash'">
+				<div class="white--text">LOL</div> me
+			</div> -->
 		</v-main>
 	</v-app>
 </template>
 
 <script>
+// TODO: On scoll animation
+// TODO: Smooth scrolling?
+// TODO: Profile cards
+
 import Profile from "./Profile.vue";
 
 export default {
 	name: "Main",
 	components: {
 		Profile,
+	},
+	created() {
+		window.addEventListener("scroll", this.handleScroll);
+	},
+	destroyed() {
+		window.removeEventListener("scroll", this.handleScroll);
+	},
+	methods: {
+		handleScroll(event) {
+			console.log(event);
+		},
 	},
 	data() {
 		return {
@@ -151,8 +177,9 @@ export default {
 			members: [
 				{
 					name: "Dmitry Mac Gregory",
-					pic: "gregory.jpg",
-					bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+					pic: "gregory3.jpg",
+					// bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+					bio: "I am cool guy, yes. Industrial revolution and its consequences...",
 					pos: "Chief brand officer",
 					posC: "CBO",
 				},
@@ -219,13 +246,15 @@ export default {
 		};
 	},
 	props: {},
-	methods: {},
 };
 </script>
 
+
+
 <style scoped>
+@import url("https://cdn.jsdelivr.net/npm/animate.css@latest/animate.min.css");
 * {
-	/* outline: 1px dotted cyan; */
+	/* outline: 1px dotted yellow; */
 }
 
 #bar {
@@ -243,13 +272,15 @@ export default {
 	font-size: 12vw;
 }
 #sub {
-	font-family: "Helvetica-Light Light";
+	/* font-family: "Helvetica-Light Light"; */
+	font-family: MavenPro Regular;
 	font-size: 0.23em;
 	margin-top: 30vh;
 	color: white;
 }
 #sub-a {
-	font-family: "Helvetica";
+	/* font-family: "Helvetica"; */
+	font-family: MavenPro Medium;
 	font-size: 1em;
 	color: #ea0f1e;
 }
@@ -329,6 +360,12 @@ export default {
 	#sub {
 		font-size: 0.4em;
 		margin-top: 40vh;
+	}
+}
+@media screen and (max-width: 1200px) {
+	#sub {
+		font-size: 0.45em;
+		margin-top: 50vh;
 	}
 }
 @media screen and (max-width: 600px) {
