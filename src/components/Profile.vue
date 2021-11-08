@@ -4,6 +4,7 @@
 			<div
 				class="name glitch"
 				:data-text="chel.name"
+				:style=" (russki === 'da') ? 'font-family: Ruda Medium' : '' "
 			>{{ chel.name }}</div>
 		</v-row>
 		<v-row no-gutters>
@@ -51,7 +52,7 @@
 <script>
 export default {
 	name: "Profile",
-	props: ["chel"],
+	props: ["chel", "russki"],
 	components: {},
 };
 </script>
@@ -96,9 +97,9 @@ export default {
 	@for $i from 0 through $steps {
 		#{percentage($i*(1/$steps))} {
 			clip: rect(
-				random(100) + px,
+				random(1000) + px,
 				9999px,
-				random(100) + px,
+				random(1000) + px,
 				0
 			);
 		}
@@ -114,7 +115,7 @@ export default {
 	color: white;
 	overflow: visible;
 	clip: rect(0, 900px, 0, 0);
-	animation: noise-anim 0.85s infinite linear alternate-reverse;
+	animation: noise-anim 1.5s infinite linear alternate-reverse;
 }
 
 @keyframes noise-anim-2 {
@@ -140,6 +141,6 @@ export default {
 	background: black;
 	overflow: visible;
 	clip: rect(0, 900px, 0, 0);
-	animation: noise-anim-2 3s infinite linear alternate-reverse;
+	animation: noise-anim-2 1s infinite linear alternate-reverse;
 }
 </style>

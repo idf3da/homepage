@@ -52,6 +52,18 @@ export default {
 	font-family: Helvetica-Light Light;
 	src: local("Helvetica-Light"), url("./fonts/HelveticaLt.ttf");
 }
+@font-face {
+	font-family: Montserrat Bold;
+	src: local("Montserrat-Bold"), url("./fonts/Montserrat-Bold.ttf");
+}
+@font-face {
+	font-family: Ruda Medium;
+	src: local("Ruda-Medium"), url("./fonts/Ruda-Medium.ttf");
+}
+@font-face {
+	font-family: Ruda Regular;
+	src: local("Ruda-Regular"), url("./fonts/Ruda-Regular.ttf");
+}
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
